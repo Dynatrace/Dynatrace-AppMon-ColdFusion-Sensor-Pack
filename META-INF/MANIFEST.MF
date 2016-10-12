@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: java Knowledge Sensor
+Bundle-SymbolicName: com.dynatrace.Big_Data.HadoopNew;singleton:=true
+Bundle-Version: 6.3.0.1305
+Bundle-Vendor: Dynatrace Diagnostics
+Require-Bundle: com.dynatrace.diagnostics.sdk

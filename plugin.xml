@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<?eclipse version="3.2"?>
+<plugin>
+  <extension id="com.dynatrace.Big_Data.HadoopNew" point="com.dynatrace.diagnostics.knowledgesensor">
+    <sensorpack>
+      <sensor type="java" key="com.dynatrace.Big_Data.HadoopNew" description="HadoopNew" userdefined="true" group="Big Data" order="-2147483648" defaultorder="0" hint="" autoplace="true" featurehash="" jssensortype="">
+        <class pattern="org.apache.hadoop.util.IndexedSorter" placed="true" match="equals" delegationsuppression="true" techtype="java">
+          <method pattern="sort" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.util.IndexedSortable" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.MapOutputFile" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="getSpillFileForWrite" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.TaskAttemptID" capture="true" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="long" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.MapTask$MapOutputCollector" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="flush" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.Task$NewCombinerRunner" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="combine" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="defaultType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.RawKeyValueIterator" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.OutputCollector" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.Task$OldCombinerRunner" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="combine" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.RawKeyValueIterator" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.OutputCollector" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.Task" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="initialize" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.JobID" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Reporter" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="boolean" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.MapTask$MapOutputBuffer" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="sortAndSpill" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP" />
+          <method pattern="sortAndWrite" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP" />
+          <method pattern="mergeParts" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.Merger" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.MapTask" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="flush" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+          <method pattern="runOldMapper" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.io.BytesWritable" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.TaskUmbilicalProtocol" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Task$TaskReporter" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="runNewMapper" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.io.BytesWritable" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.TaskUmbilicalProtocol" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Task$TaskReporter" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.ReduceTask" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="runOldReducer" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.TaskUmbilicalProtocol" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Task$TaskReporter" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.RawKeyValueIterator" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.io.RawComparator" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.lang.Class" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.lang.Class" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="runNewReducer" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.TaskUmbilicalProtocol" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Task$TaskReporter" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.RawKeyValueIterator" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.io.RawComparator" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.lang.Class" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.lang.Class" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.ReduceTask$ReduceCopier" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="createKVIterator" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.fs.FileSystem" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Reporter" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="copyOutput" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputLocation" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="shuffleInMemory" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputLocation" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.net.URLConnection" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.io.InputStream" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="shuffleToDisk" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputLocation" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.io.InputStream" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.fs.Path" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="long" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+          <method pattern="&lt;clinit&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapreduce.task.reduce.Shuffle" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.MapRunner" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.RecordReader" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.OutputCollector" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Reporter" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="inheritedMethods" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.RecordReader" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.OutputCollector" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Reporter" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.MapRunnable" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.RecordReader" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.OutputCollector" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Reporter" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapreduce.Reducer" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapreduce.Reducer$Context" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapreduce.Mapper" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapreduce.Mapper$Context" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="run" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="inheritedMethods" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapreduce.Mapper$Context" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapreduce.Job" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="submit" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.JobClient" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="submitJob" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="java.lang.String" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="submitJob" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="submitJobInternal" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="runJob" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.RunningJob" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="waitForCompletion" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.JobClient" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="java.lang.String[]" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.mapred.TaskTracker" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.server.datanode.DataNode" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.YarnChild" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.server.namenode.NameNode" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.server.namenode.UpgradeManagerNamenode" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.JobTracker" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.Child" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapreduce.JobSubmitter" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="submitJobInternal" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.yarn.server.webproxy.WebAppProxyServer" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="java.lang.String[]" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.yarn.server.nodemanager.NodeManager" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="java.lang.String[]" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="java.lang.String[]" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapreduce.v2.app.MRAppMaster" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="main" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MapReduce" inheritance="auto" capture="active">
+            <argument pattern="java.lang.String[]" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.DFSClient$DFSInputStream" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="readBuffer" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="byte[]" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="fetchBlockByteRange" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.hdfs.protocol.LocatedBlock" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="long" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="long" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="byte[]" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.DFSInputStream" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="readBuffer" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="byte[]" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.util.Map" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="readBuffer" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.hdfs.DFSInputStream$ReaderStrategy" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.util.Map" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="fetchBlockByteRange" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.hdfs.protocol.LocatedBlock" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="long" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="long" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="byte[]" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="int" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.util.Map" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.hdfs.DFSClient" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="&lt;api unknown&gt;" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.hadoop.mapred.JobTracker" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="defaultType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="defaultType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Clock" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="defaultType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.lang.String" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="defaultType" api="&lt;api unknown&gt;" inheritance="auto" capture="active">
+            <argument pattern="org.apache.hadoop.mapred.JobConf" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="java.lang.String" capture="false" match="equals" deepobjectaccessor="" />
+            <argument pattern="org.apache.hadoop.mapred.Clock" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+        <class pattern="org.apache.hadoop.yarn.server.resourcemanager.scheduler.Queue" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="&lt;init&gt;" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="MapReduce" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="org.apache.pig.EvalFunc" placed="true" match="equals" delegationsuppression="false" techtype="java">
+          <method pattern="exec" match="equals" placed="include" capturereturn="false" deepobjectaccessor="" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="Pig" inheritance="inheritedMethods" capture="active">
+            <argument pattern="org.apache.pig.data.Tuple" capture="false" match="equals" deepobjectaccessor="" />
+          </method>
+        </class>
+      </sensor>
+    </sensorpack>
+  </extension>
+</plugin>
